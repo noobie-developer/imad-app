@@ -10,8 +10,7 @@ var articleOne = {
     title: 'Article One | Abhishek Pillai',
     date: 'February, 21 2018',
     heading: 'This heading was added from server.js',
-    content: `<p>This is the content for my first article, hope you like it :)</p>
-        </div>`,
+    content: '<div> <p>This is the content for my first article, hope you like it :)</p> </div>',
 };
 
 
@@ -63,11 +62,11 @@ app.get('/article-one', function (req, res) {
 });
 
 app.get('/article-two', function (req, res) {
-  res.sendFile(createTemplate(articleOne));
+  res.sendFile(__dirname,'ui','article-two.html');
 });
 
 app.get('/article-three', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+  res.send(path.join(__dirname, 'ui', 'article-three.html'));
 });
 
 app.get('/ui/style.css', function (req, res) {
