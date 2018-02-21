@@ -59,11 +59,11 @@ app.get('/', function (req, res) {
 });
 
 app.get('/article-one', function (req, res) {
-  res.sendFile(createTemplate(articleOne));
+  res.sendFile(path.join(__dirname, '/', 'article-one.html'));
 });
 
 app.get('/article-two', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
+  res.sendFile(createTemplate(articelOne));
 });
 
 app.get('/article-three', function (req, res) {
